@@ -35,7 +35,8 @@ console.log(getRecentCompanies(companies));
 let reverseString = function(string) {
   return string.split('').reverse().join('');
 }
-
+// string.split('') -- splits a strings into an array e.g.rat into ['r','a','t']
+// array.join('') -- returns a string
 console.log(reverseString('Akshay Verma'));
 console.log(reverseString('Mr.Rakesh ; Bansal'));
 console.log(reverseString('hello'));
@@ -83,5 +84,24 @@ console.log(capitalizeLetters('i love javascript'));
 // Return the character that is most common in a string
 // e.g. maxCharacters('javascript' ==> a)
 let maxCharacters = function(str) {
-
 }
+
+// Challenge 5: FizBuzz
+// Write a program that prints all the numbers from 1 to 100
+// For multiples of 3, instead of number, print 'Fizz', for multiples of 5
+// print 'Buzz'. For numbers which are multiples of both 3 and 5, print
+// FizzBuzz
+function fizBuzz() {
+
+  for(let i=0; i<=100; i++){
+    if(i%3 == 0 && i%5 == 0)
+      console.log('FizzBuzz');
+    else if(i%3 == 0)
+      console.log('Fizz');
+    else if(i%5 == 0)
+      console.log('Buzz');
+    else
+      console.log(i);
+  }
+}
+fizBuzz();
