@@ -6,9 +6,7 @@ class Module1 {
     let clockElem = document.getElementById('_clockHandle');
     clockElem.innerText = new Date().toLocaleTimeString();
   }
-
   removeTime() {
-
   }
 }
 
