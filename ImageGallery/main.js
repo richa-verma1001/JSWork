@@ -14,7 +14,6 @@ function init() {
     let sortBtn = document.getElementById('_sortUsers');
     sortBtn.addEventListener('click', sortUsers );
 
-    debugger;
     let clearBtn = document.getElementById('_clearUsers');
     clearBtn.addEventListener('click', clearUsers);
     console.trace('All listeners added');
@@ -29,16 +28,16 @@ function init() {
     fetch(url)
       .then(function(response){
         return response.json();
-      }).then(function(data){
-        users = data;
-        parseUsers(data);
+      }).then(function(json){
+        users = json;
+        parseUsers(json);
       }).catch(function(error){
         console.log(error);
       });
   }
 
   function parseUsers(users) {
-    clearnError();
+    clearError();
     users.forEach(function(user){
       createUserNode(user);
     });
@@ -46,8 +45,6 @@ function init() {
 
   function createUserNode(user){
     console.log(user);
-    //let imgSrc = user.avatar_url;
-    //let login =
     let {avatar_url, login} = user;
     let content = `<div class="card">
         <img class="card-img-top" src="${avatar_url}" alt="Card image cap">
@@ -60,7 +57,7 @@ function init() {
 
   }
 
-  function clearnError() {
+  function clearError() {
     let messageNode = document.getElementById('message');
     messageNode.style.cssText = "display:none";
   }
@@ -76,7 +73,7 @@ function init() {
       handleError();
     else {
       users.sort(function(first, second){
-        if(first.login > second.login)
+        if(first.login.charAt[0] > second.login.charAt[0])
           return 1;
         else
           return -1;

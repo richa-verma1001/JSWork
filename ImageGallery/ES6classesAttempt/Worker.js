@@ -13,7 +13,7 @@ class Worker {
     fetch(url)
       .then(function(response){
         return response.json();
-      }).then((data)=>{Worker.parseUsers(data)})
+      }).then((json)=>{Worker.parseUsers(json)})
         .catch(function(error){
         console.log(error);
       });
